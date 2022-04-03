@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    #ringsImg {
+      width: 100%;
+      height: 320px;
+
+    }
+
+    #ringsImg>img {
+      height: 100%;
+      width: 100%
+    }
+
+    #content-sorted {
+      width: 92%;
+      height: 95px;
+      border-bottom: 1px solid red;
+      margin: auto;
+      margin-top: 20px
+    }
+
+    #content-sorted-1 {
+      width: 45%;
+      height: 85%;
+      border: 1px solid blue;
+      display: flex;
+      justify-content: space-around;
+    }
+
+    #content-sorted-1>div {
+      width: 22%;
+      height: 80%;
+      border: 1px solid black;
+
+    }
+
+
+
+    #container {
+
+      font-size: 0.9em;
+      font-family: "Avenir Next", sans-serif;
+      font-style: normal;
+      font-weight: lighter;
+      color: #3d4246;
+      line-height: 1.5;
+
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      width: 92%;
+      /* border:1px solid red; */
+      margin: auto;
+      margin-top: 20px
+    }
+
+    @media all and (max-width: 750px) {
+      #container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+
+    #container>div {
+      margin-top: 10px;
+      width: 95%;
+      height: 320px;
+      /* border:1px solid blue */
+    }
+
+    #container>div>img {
+      width: 100%;
+      height: 75%
+    }
+
+    #container>div>h3 {
+      text-align: center;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      word-wrap: break-word;
+      margin: 0 0 17.5px;
+      line-height: 30px;
+    }
+
+    #priceBox {
+      display: flex;
+      justify-content: space-between;
+
+      height: 40px;
+      margin-top: -25px;
+      padding-left: 45px;
+      padding-right: 45px;
+      font-size: 14px;
+      font-family: "Avenir Next", sans-serif;
+    }
+
+    #price-style {
+      color: #3d4246;
+
+    }
+
+    #stricked {
+      color: #b2aeac;
+      text-decoration: line-through;
+    }
+
+    #btn-bottom {
+
+      display: flex;
+    }
+
+    button {
+
+      margin: auto;
+      padding: 15px 40px 15px 35px;
+      background-color: white;
+      border: 1px solid black;
+      color: black;
+      border-radius: 2px;
+      font-family: "Avenir Next", sans-serif;
+      font-size: 13px;
+
+    }
+
+    #text-bottom {
+      color: gray;
+      width: 88%;
+      height: 100px;
+      margin: auto;
+      line-height: 25px;
+      font-family: "Avenir Next", sans-serif;
+      font-size: 15px;
+    }
+
+    #text-bottom>strong {
+      color: grey;
+      font-size: 15px
+    }
+
+    /* Medium screen */
+    @media only screen and (min-width: 421px) and (max-width: 1133px) {
+      #container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 35px
+      }
+
+      .faq {
+        /* border:1px solid red; */
+        margin-top: 500px;
+
+      }
+
+      #text-bottom {
+        margin-bottom: 65px
+      }
+
+    }
+
+    /* small screen */
+    @media only screen and (min-width: 70px) and (max-width: 430px) {
+      #container {
+        display: flex;
+      }
+
+      #text-bottom {
+        margin-bottom: 200px;
+        width: 130%;
+        /* border:1px solid red */
+      }
+
+      .faq {
+        /* border:1px solid red; */
+        margin-top: 50px;
+
+      }
+
+      button {
+        padding: 15px 240px 15px 240px;
+        margin-left: 25px;
+        background-color: white;
+        border: 1px solid black;
+        color: black;
+        border-radius: 2px;
+        font-family: "Avenir Next", sans-serif;
+        font-size: 13px;
+      }
+    }
+
+    @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
+
+    * {
+      box-sizing: border-box;
+      font-family: "Avenir Next", sans-serif;
+    }
+
+    .faq {
+      padding: 10px;
+      width: 95%;
+      min-width: 450px;
+      margin: auto;
+      position: relative;
+      height: auto;
+      /* border:1px solid red; */
+      margin-top: -80px
+    }
+
+    .faq-container {
+      width: 100%;
+      height: 100%;
+
+    }
+
+    .faq-label {
+      cursor: pointer;
+      width: 100%;
+      padding: 0px 15px 30px 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      border-radius: 0;
+      /* background: #d0edf0; */
+
+    }
+
+    .faq-label-text {
+      color: #3D4246;
+      font-size: 15px;
+
+    }
+
+    .faq-label-icon {
+      padding: 2px 3px;
+      /* background: #d0edf0; */
+      border-radius: 6px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: black
+    }
+
+    .material-icons {
+      color: #365A5E;
+      transition: 0.3s ease;
+    }
+
+    .faq-answer {
+      transition: 0.3s ease;
+      margin-top: 15px;
+      height: 0;
+      /* border-radius: 6px; */
+      color: rgba(127, 121, 121, 1);
+      overflow: hidden;
+      font-family: "Avenir Next", sans-serif;
+
+    }
+
+    .faq-answer-content {
+      padding: 10px 0 10px 15px;
+
+
+
+    }
+
+    .active {
+
+      background: #FFFFFF;
+      /* border: 1px solid #C7C4C4; */
+      ;
+
+
+      height: auto;
+      margin-bottom: 25px;
+
+    }
+
+    .rotate {
+      transform: rotate(180deg)
+    }
+
+    .global-label {
+      color: #365A5E;
+      width: 100%;
+      height: 35px;
+      /* border-bottom: solid 2px #C4C1C1; */
+      margin-bottom: 35px;
+    }
+
+    .global-label-text {
+      font-size: 18px;
+      font-weight: 700;
+      color: #365A5E;
+    }
+
+    .score {
+      display: none;
+      color: #00ff2a;
+      padding: 15px;
+      width: 45px;
+      height: 25px;
+      margin: 45px auto;
+      text-align: center;
+      padding: 5px;
+      justify-content: center;
+      align-items: center;
+      border-radius: 5px;
+      background: white;
+    }
+
+    .about-me {
+      border-radius: 5px;
+      width: 300px;
+      margin: auto;
+      color: white;
+      text-align: center;
+      background: #ffff;
+      padding: 7px 18px;
+    }
+
+    .faq-answer-content>h3 {
+      color: #3D4246;
+      line-height: 0px;
+    }
+
+    .faq-answer-content>h3+ol {
+      color: #3D4246;
+      font-size: 15px;
+    }
+
+    strong {
+      color: #3D4246
+    }
+
+    .faq-answer-content>p>strong {
+      color: grey
+      
+    }
+
+
+    
+.filter_sort_Container{
+  margin-top: 30px;
+  margin-left: 40px;
+  margin-right: 40px;
+  overflow:auto;
+}
+
+.filter_Container{float:left;}
+
+.sort_container > select{float:right;padding:7px;margin-right:40px; margin-top:10px;
+border: none;
+color: #000000d0;
+margin-bottom: 10px;
+box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+
+.filter_Container > select{
+  border:none;
+  color: #000000ab;
+  padding:7px;
+  margin-right:40px; margin-top:10px;
+}
+  </style>
+
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <script src="https://kit.fontawesome.com/d1feb19a20.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+      
+  <div id="top_Navbar">
+      
+    <div id="slider">
+        <ul>
+          <li>
+          <div class="slider-container">
+            <p>Free shipping across India!</p>
+          </div>
+          </li>
+          
+          <li>
+          <div class="slider-container">
+            <p>Use code UGADI to get 10% OFF on Celebrations Collection!</p>
+          </div>
+          </li>
+          
+          <li>
+          <div class="slider-container">
+            <p>Use code LOVE for 15% OFF above Rs. 3,500!</p>
+          </div>
+          </li>
+          
+        </ul>
+        </div>
+        
+
+</div>
+<div id="main_navbar">
+<div id="navbar_logo">
+<img src="https://cdn.shopify.com/s/files/1/0061/8378/0442/files/logo_0448f214-5f81-4ac3-9740-361cd250daf1_180x.png?v=1644911387" height="50px" width="100px">
+</div>
+
+<div id="navbar_options">
+
+    
+<div class="dropdown">
+<button class="dropbtn" >  Collections
+    <i class="fa-solid fa-angle-down"></i>  </button>
+<div class="dropdown-content">
+    <table>
+        <tr>
+            <th>Shop By Category</th>
+            <th>Shop By Color</th>
+            <th>Shop By Stone</th>
+            <th>Shop By Style</th>
+            <th>Shop Featured</th>
+            <th>Shop Trending</th>
+        </tr>
+        <tr>
+            <td> 
+                <p onclick="RIngFun()"> Rings </p>
+                <p onclick="penFun()">  Necklaces & Pendants </p>
+                <p onclick="earFun()"> Earrings </p>
+                <p onclick="setsFun()"> Jewellery Sets </p>
+                <p> Bracelets </p>
+                <p> Toe Rings </p>
+                <p> Anklets </p>
+                <p> Chains </p>
+                <p> Mangalsutras </p>
+                <p> Nose Pins </p>
+                <p> ALL </p>
+
+            </td>
+            
+            <td>
+                <p> Gold </p>
+                <p> Rose Gold </p>
+                <p> Silver </p>
+                <p> Oxidised Silver </p>
+            </td>
+
+            <td>
+                <p> Coloured Stone </p>
+                <p> Pearl </p>
+                <p> Zircon </p>
+                <p> Chalcedony </p>
+                <p> Marcasite </p>
+                <p> None </p>   
+            </td>
+
+
+            <td>
+                <p>  Everyday Staples </p>
+                <p>Office Minimals </p>
+                <p>Party Pieces </p>
+                <p>Wedding Wear </p> 
+                <p>Mens </p> 
+            </td>
+
+            <td>
+                <p style="color: red;">New </p>
+                <p>Bestsellers </p>
+                <p>Anushka's Favourites </p>
+                <p>AVNI- Oxidized Silver </p>
+                <p>Perfumes </p>
+            </td>
+            <td>
+                <p> Princess Collection </p>
+                <p>Floral Dreams </p>
+                <p>Divine Collection </p>
+                <p>Animal Love </p>
+                <p>Forever Together </p>
+                <p>Paradise of Pearls </p>
+                <p>Golden Glam </p> 
+            </td>
+        
+        </tr>
+      </table>
+      
+
+</div>
+</div>
+
+    
+<div class="dropdown">
+<button class="dropbtn">Gifts <i class="fa-solid fa-angle-down"></i></button>
+<div class="dropdown-content">
+<table style="width: 460px;">
+
+<tr>
+    <th>By Price </th>
+    <th>By Recipient</th>
+    <th>By Occasion </th>
+    <th>Others</th>
+  </tr>
+
+  <tr>
+      <td style="width: 105px;">
+          <p>Below Rs. 2,000</p>
+        <p>Above Rs. 2,000</p>
+      </td>
+
+    <td style="width: 105px;">  
+<p> Mother </p>
+<p> Sister </p>
+<p> Special One </p>
+<p> For Him </p>
+<p> Couples </p>
+    </td>
+
+    <td>
+<p> Just Because! </p>
+<p> Anniversary </p>
+<p> Birthday </p>
+<p> Marriage </p>
+<p> Women's Day </p>
+<p> Festive Gifts! </p>
+    </td>
+
+    <td>
+<p> Perfumes </p>
+<p> Cufflinks </p>
+    </td>
+
+  </tr>
+
+
+</table>
+
+</div>
+</div>
+
+
+<div class="dropdown">
+<button class="dropbtn">Best of GIVA </button>
+</div>
+
+<div class="dropdown">
+<button class="dropbtn">Personalised Jewellery </button>
+</div>
+
+<div class="dropdown">
+<button class="dropbtn">Dawn of Celebrations
+</button>
+</div>
+
+<div class="dropdown">
+<button class="dropbtn">Anushka's Favourites
+</button>
+</div>
+
+
+<div class="dropdown">
+<button class="dropbtn">More <i class="fa-solid fa-angle-down"></i></button>
+<div class="dropdown-content">
+<table style="width: 230px;">
+<tr>
+<td>
+<p>Track Order </p>
+<p> Gift Genie </p>
+<p> Jewellery care </p>
+<p> GIVA Cares </p>
+<p> Join us </p>
+<p> Contact us </p>
+<p> Frequently Asked Questions </p>
+<p> Media Mentions </p> 
+<p> GIVA Blog </p>
+</td>
+</tr>
+</table>
+
+</div>
+</div>
+
+
+
+
+</div>
+
+<div id="navbar_icons">
+    
+    <i class="fa-solid fa-magnifying-glass fa-lg" style="margin-right:15px;"></i>
+    <i class="fa-regular fa-user fa-lg" style="margin-right:15px;" ></i>
+    <i class="fa-regular fa-heart fa-lg" style="margin-right:15px;" onclick="wishlistFun()"></i>
+    <i class="fa-solid fa-bag-shopping fa-lg" onclick="addCartFun()"></i>
+</div>
+</div>
+
+
+  <div id="ringsImg">
+    <img
+      src="https://s3.us-west-2.amazonaws.com/pics.angara.com/blogs/jil-magazine/wp-content/uploads/2021/03/19001419/Brown-Diamond-Is-it-worth-buying.jpg" />
+  </div>
+
+  <div class="filter_sort_Container">
+    <div class="filter_Container">
+          <select>
+            <option> PRODUCT TYPE </option>
+            <option>Price</option>
+          </select>
+      
+          <select>
+            <option> PRICE </option>
+            <option>Date </option>
+          </select>
+      
+            <select>
+            <option> STONE </option>
+            <option>to High</option>
+          </select>
+      
+            <select>
+            <option> COLOR </option>
+            <option> High</option>
+          </select>
+    
+      </div>
+      
+      <div class="sort_container">
+          <select id="Sort_Product_By_Price">
+            <option> SORT BY: BEST SELLING </option>
+            <option>Price, Low to High</option>
+            <option>Price, High to Low</option>
+            <option>Alphabetically, A-Z</option>
+            <option>Alphabetically, Z-A</option>
+            <option>Date, new to old</option>
+            <option>Date, old to new</option>
+          </select>
+      </div>
+    </div>
+    <hr />
+
+
+  <div id="container"></div>
+  <br>
+  <br>
+
+
+  <div id="btn-bottom">
+    <button>LOAD MORE</button>
+  </div>
+  <br>
+  <br>
+  <br>
+
+  <div id="text-bottom">Rings are as important as any other piece of jewellery, if not more. They add that extra
+    graceful touch to your entire look. However, rings can mean different things to different people. Some can’t step
+    out without their rings while for others, it reminds them of the love they share with their significant others. A
+    ring with a gemstone serves as a ray of hope while a gold ring is an investment for many. Whatever may be the case,
+    you can <strong>buy rings online</strong> easily through GIVA’s website and app.</div>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+
+  <div class='faq'>
+    <div class="global-label">
+      <div class="global-label-text">
+        <!-- Foire aux questions -->
+      </div>
+
+    </div>
+    <!--1 question-->
+    <div class="faq-container">
+      <div class="faq-label">
+        <div class="faq-label-text">
+          BUY RINGS ONLINE IN INDIA FROM GIVA
+        </div>
+
+        <div class="faq-label-icon">
+          <span class="material-icons">
+            expand_more
+          </span>
+        </div>
+
+      </div>
+      <div class="faq-answer ">
+        <div class="faq-answer-content">
+          <p>
+            Nobody ever said no to a pretty ring especially when you are spoilt for choices with GIVA. The rings
+            collection at GIVA ranges from different tones like silver, gold, rose gold to coloured stones, zircons, and
+            a couple of bands.
+          </p>
+          <p>
+            <strong>Designer rings online</strong>
+            are now more accessible than ever with GIVA and the plethora of designs they have to choose from.
+          </p>
+          <h3>
+            Here are a few more reasons to
+            <strong>buy fashion jewellery online</strong>
+            with GIVA:
+          </h3>
+          <ol>
+            <li>Adjustable rings ensure they are no fitting issues</li>
+            <li>Sterling silver base with gold and rose gold plating</li>
+            <li>Rhodium finish to prevent tarnis</li>
+            <li>Authenticity certificate shared with all GIVA Jewellery</li>
+          </ol>
+
+        </div>
+
+      </div>
+    </div>
+    <!--2 question-->
+    <div class="faq-container">
+      <div class="faq-label">
+        <div class="faq-label-text">
+          TYPES OF RINGS
+        </div>
+        <div class="faq-label-icon">
+          <span class="material-icons">
+            expand_more
+          </span>
+        </div>
+
+      </div>
+      <div class="faq-answer ">
+        <div class="faq-answer-content">
+          <p>
+            <strong>Rings for women</strong>
+            can get a little intimidating at first, due to the tonnes of styles. However, to make it simpler, here are a
+            few very common types of rings that will save you the time and effort you put into making your pick.
+          <ol>
+            <li>
+              <strong>Bands:</strong>
+              These rings have a uniform width throughout and no apparent top. However, it can be engraved with names or
+              gemstones depending on the style.
+
+            </li>
+            <li>
+              <strong>Solitaire Ring:</strong>
+              A solitaire ring is a ring with a band and just a single diamond, zircon, or any other gemstone.
+            </li>
+            <li>
+              <strong>Signet Ring:</strong>
+              Mostly worn by men, a signet ring has a flat or oval section at the front with initials or patterns carved
+              into it.
+
+            </li>
+            <li>
+              <strong>Halo Ring: </strong>
+              A halo ring has a centre stone encircled by small studded stones which creates an illusion of a bigger
+              center stone.
+
+            </li>
+            <li>
+              <strong>Cluster Ring:</strong>
+              A cluster ring has multiple stones, all of the different sizes clustered together on the top.
+            </li>
+          </ol>
+          </p>
+
+        </div>
+
+      </div>
+    </div>
+    <!-- 3 question -->
+    <div class="faq-container">
+      <div class="faq-label">
+        <div class="faq-label-text">
+          SHOP THE LATEST COLLECTION OF RINGS ONLINE
+        </div>
+        <div class="faq-label-icon">
+          <span class="material-icons">
+            expand_more
+          </span>
+        </div>
+
+      </div>
+      <div class="faq-answer ">
+        <div class="faq-answer-content">
+          <p>In search of the perfect fitting ring? Or something that adds an oomph factor to all your looks? Here is
+            the latest collection of the ring online at GIVA you should check out:
+
+          </p>
+          <br>
+          <strong>Anushka Sharma Silver Studded Rose Ring:</strong>
+          <p>The perfect combination of elegance and grace is right here with the Anuska Sharma Silver Studded Rose
+            Ring.</p>
+          <br>
+          <strong>Anushka Sharma Silver Minimal Couple Rings:</strong>
+          <p>These couple rings are just as beautiful as your love story. But still very subtle and minimal.</p>
+          <br>
+          <strong>Rose Gold Heart-Melting Chain Ring:</strong>
+          <p>This ring is just as unique as each of you DIVAs out there with the heart dangling from the chain!</p>
+        </div>
+
+      </div>
+    </div>
+    <!--4 question -->
+    <div class="faq-container">
+      <div class="faq-label">
+        <div class="faq-label-text">
+          FAQS
+        </div>
+        <div class="faq-label-icon">
+          <span class="material-icons">
+            expand_more
+          </span>
+        </div>
+
+      </div>
+      <div class="faq-answer ">
+        <div class="faq-answer-content">
+          <p>1. How to identify silver quality in rings?</p>
+          <p>There are several ways to identify authentic silver, the most common one being a sterling silver quality
+            mark of 925 engraved on the ring.</p>
+          <br>
+          <p>2. Are GIVA silver rings only suitable for Women?</p>
+          <p>No, GIVA has silver rings that are suitable for both men and women. Check out their latest collection of
+            men’s rings here.</p>
+          <br>
+          <p>3. Does a GIVA silver ring turn black?</p>
+          <p>GIVA’s silver rings and all other jewellery, come with a rhodium finish to keep them from tarnishing and
+            turning black.</p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+
+  
+  <!-- footer code -->
+
+  <div id="First_Footer">
+    <div id="First_Footer_Item">
+
+      <p> Quick links </p>
+
+      <a href=""> Careers </a> <br>
+      <a href=""> Jewellery care</a> <br>
+      <a href=""> Reviews</a> <br>
+      <a href=""> Privacy policy</a> <br>
+      <a href="">Shipping & Handling</a> <br>
+      <a href="">Terms of service</a> <br>
+      <a href="">Frequently Asked Questions</a> <br>
+
+    </div>
+
+    <div id="First_Footer_Item">
+      <p> Newsletter </p>
+      <input type="email" placeholder="Email address"> <button>SUBSCRIBE</button>
+    </div>
+
+    <div id="First_Footer_Item">
+      <p> Contact us </p>
+      <p> BIS : HM/C - 6290031216 </p>
+      <p> For any suggestions, queries or complaints please contact us at :</p>
+      <p> - care@giva.co </p>
+      <p> - 080-47189504 (10 AM to 6:30 PM) </p>
+    </div>
+  </div>
+
+  <div id="Second_Footer">
+    <div id="Second_Footer_Item_SocialMedia">
+      <div id="Second_Footer_logo"> <img src="../media/Second_Footer_logo_facebook.png" /> </div>
+      <div id="Second_Footer_logo"> <img src="../media/Second_Footer_logo_instagram.png" /> </div>
+      <div id="Second_Footer_logo"> <img src="../media/Second_Footer_logo_youtube.png" /> </div>
+      <div id="Second_Footer_logo"> <img src="../media/Second_Footer_logo_linkedin.png" /> </div>
+    </div>
+
+    <div id="Second_Footer_Item_Payment_Logo">
+      <div id="Second_Footer_logo"> <img src="../media/airtel.png" /> </div>
+      <div id="Second_Footer_logo"> <img src="../media/amezon.jpg" /> </div>
+      <div id="Second_Footer_logo"> <img src="../media/amex.png" /> </div>
+      <div id="Second_Footer_logo"> <img src="../media/mastercard.jpg" /> </div>
+      <div id="Second_Footer_logo"> <img src="../media/mobi.webp" /> </div>
+      <div id="Second_Footer_logo"> <img src="../media/googlepay.png" /> </div>
+      <div id="Second_Footer_logo"> <img src="../media/emblem-Paypal.jpg" /> </div>
+      <div id="Second_Footer_logo"> <img src="../media/paytm.png" /> </div>
+      <div id="Second_Footer_logo"> <img src="../media/hdfc.jpg" /> </div>
+      <div id="Second_Footer_logo"> <img src="../media/rupay.png" /> </div>
+      <div id="Second_Footer_logo"> <img src="../media/visa.png" /> </div>
+      <div id="Second_Footer_logo"> <img src="../media/amex.png" /> </div>
+
+    </div>
+    <p> © 2022, GIVA Jewellery </p>
+  </div> 
+
+
+</body>
+
+<!-- add data file -->
+<script src="../js/data.js"></script>
+<script src="../js/header.js"></script>
+
+
+<script>
+
+  var ring = JSON.parse(localStorage.getItem("Products")) || [];
+  var ringsData = ring; // new added
+  var temp = localStorage.getItem("Display_Category") || [];
+  RelodeData();
+
+  var SortByPrice = document.querySelector("#Sort_Product_By_Price");
+  if (SortByPrice) SortByPrice.addEventListener('change', function (event) {
+    // console.log();
+
+    // sort in assending order
+    if (event.target.value == "Price, Low to High") {
+      ring[0].sort(function (a, b) {
+        return a.price - b.price;
+      });
+    }
+
+    // sort in dessending order
+    if (event.target.value == "Price, High to Low") {
+      ring[0].sort(function (a, b) {
+        return b.price - a.price;
+      });
+    }
+
+    // sort Alphabetically, A-Z
+    if (event.target.value == "Alphabetically, A-Z") {
+      // sort by name
+      ring[0].sort(function (a, b) {
+        const nameA = a.title.toUpperCase(); // ignore upper and lowercase
+        const nameB = b.title.toUpperCase(); // ignore upper and lowercase
+        if (nameA < nameB) { return -1; }
+        if (nameA > nameB) { return 1; }
+
+        // names must be equal
+        return 0;
+      });
+    }
+
+    // sort Alphabetically, Z-A
+    if (event.target.value == "Alphabetically, Z-A") {
+      // sort by name
+      ring[0].sort(function (a, b) {
+        const nameA = a.title.toUpperCase(); // ignore upper and lowercase
+        const nameB = b.title.toUpperCase(); // ignore upper and lowercase
+        if (nameA < nameB) { return 1; }
+        if (nameA > nameB) { return -1; }
+
+        // names must be equal
+        return 0;
+      });
+    }
+
+    // remove all rows from table
+    var Table = document.getElementById("container");
+    Table.innerHTML = "";
+
+    // lode new modified data in table 
+
+    RelodeData();
+  });
+
+
+
+
+  function RelodeData() {
+    ring[0].map(function (elem) {
+      if (elem.category == temp) {
+        var box = document.createElement("div");
+
+        var img = document.createElement("img");
+        img.src = elem.pic;
+
+        var name = document.createElement("h3");
+        name.textContent = elem.title;
+
+        var box2 = document.createElement("div");
+        box2.setAttribute("id", "priceBox")
+
+        var price = document.createElement("p");
+        price.innerText = elem.NewPrice;
+        price.setAttribute("id", "price-style")
+
+        var strickedPrice = document.createElement("p");
+        strickedPrice.innerText = elem.OldPrice;
+        strickedPrice.setAttribute("id", "stricked")
+
+        box2.append(price, strickedPrice)
+
+        box.append(img, name, box2);
+
+        document.querySelector("#container").append(box);
+
+        box.onclick = function () {
+
+          var showProduct = JSON.parse(localStorage.getItem("Display_Product")) || []
+          if (showProduct.length == 1) { showProduct.pop(); }
+          var ProductObj = {
+            category: elem.category,
+            pic: elem.pic,
+            title: elem.title,
+            NewPrice: elem.NewPrice,
+            OldPrice: elem.OldPrice,
+            price: elem.price,
+          };
+
+          showProduct.push(ProductObj);
+          localStorage.setItem("Display_Product", JSON.stringify(showProduct));
+
+          window.open("showProduct.html","_self");
+
+        };
+      }
+    })
+  }
+
+
+</script>
+
+</html>
